@@ -1,7 +1,7 @@
 <?php
 	// incluimos la conexión a MySQL
 
-	include_once('dbcon.php');
+	include_once('bdConnection.php');
 
 	// variables para insertar datos a mysqli
     $nombre = $_POST["nombre"];
@@ -20,7 +20,7 @@
 	VALUES('$nombre', '$apellido', '$contraseña', '$mail')";
     
 	if ($con->query($query)) {  
-        header('Location: index.php');;
+        header('Location: inicio.php');;
     }else{
         return false;
     }
