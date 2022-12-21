@@ -1,8 +1,7 @@
 <?php
 include 'phpCodigoCarrito.php';
-
-
 ?>
+
 <!DOCTYPE html>
 
 <html>
@@ -14,15 +13,15 @@ include 'phpCodigoCarrito.php';
 
 </style>
 
-                <h3>Order Details</h3>  
+                <h3>Detalles del Pedido</h3>  
                 <div class="table-responsive">  
                      <table class="table table-bordered">  
                           <tr>  
-                               <th width="40%">Item Name</th>  
-                               <th width="10%">Quantity</th>  
-                               <th width="20%">Price</th>  
-                               <th width="15%">Total</th>  
-                               <th width="5%">Action</th>  
+                               <th width="5%">Nombre del Articulo</th>  
+                               <th width="5%">Cantidad</th>  
+                               <th width="5%">Precio</th>  
+                               <th width="5%">Total</th>  
+                               <th width="5%">Desea removerlo?</th>  
                           </tr>  
                           <?php   
                           if(!empty($_SESSION["shopping_cart"]))  
@@ -52,6 +51,23 @@ include 'phpCodigoCarrito.php';
                           ?>  
                      </table>  
                 </div>
+
+
+
+<p>
+     <br>
+     <br>
+     <a href="insertToBDFromPHP.php?importe=<?php echo $total; ?>"> <button type="button">Finalizar compra</button>
+
+</p>
+
+
+
+<p>
+     <br>
+     <br>
+     <a href="Inicio.html"> <button type="button"> Seguir comprando </button>
+</p>
 
 
 </body>

@@ -1,8 +1,7 @@
 <?php
 include 'phpCodigoCarrito.php';
-
-
 ?>
+
 <!DOCTYPE html>
 
 <html>
@@ -11,10 +10,6 @@ include 'phpCodigoCarrito.php';
 
 
 <style>
-
-.productosimages{
-  float: left;
-}
 
 .button {
   background-color: #4CAF50;
@@ -33,23 +28,15 @@ include 'phpCodigoCarrito.php';
   float: right;
 }
 
-
 </style>
 
 
-
-
-<p>
-  <img src="images/pantalon.png" class="productosimages" alt="To-Pantalon" style="width:140px;height:140px;"></a>
-  <a href="carritoFinal.php"> <img src="images/carrito.png" class="carrito" alt="To-Carrito" style="width:50px;height:50px;"></a>
-</p>
-
-
-                      <br />  
            <div class="container" style="width:700px;">  
-                <h3 align="center">Simple PHP Mysql Shopping Cart</h3><br />  
-                <?php  
-                $query = "SELECT * FROM familia WHERE id_articulo = 2";  
+
+
+                <?php
+                $valor = $_GET['valor'];
+                $query = ("SELECT * FROM articulos WHERE id_articulo = '$valor'");  
                 $result = mysqli_query($connect, $query);  
                 if(mysqli_num_rows($result) > 0)  
                 {  
@@ -59,12 +46,14 @@ include 'phpCodigoCarrito.php';
                 <div class="col-md-4">  
                      <form method="post" action="carritoFinal.php?action=add&id_articulo=<?php echo $row["id_articulo"]; ?>">  
                           <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">  
-                               <h4 class="text-info"><?php echo $row["id_articulo"]; ?></h4>  
-                               <h4 class="text-danger">$ <?php echo $row["importe"]; ?></h4>  
+                               <h4 class="text-info"><?php echo $row["nombre_producto"]; ?></h4>  
+                               <img src="images/Productos/<?php echo $row["nombre_producto"];?>.jpg" alt="Sandwich" style="width:50%">
+                               <h4 class="text-danger">$ <?php echo $row["importe"]; ?></h4>
+                               <h4 class="text-danger">Cuantos desea añadir?</h4>  
                                <input type="text" name="quantity" class="form-control" value="1" />  
                                <input type="hidden" name="hidden_name" value="<?php echo $row["sexo"]; ?>" />  
                                <input type="hidden" name="hidden_price" value="<?php echo $row["importe"]; ?>" />  
-                               <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />  
+                               <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Añadir al carro" />  
                           </div>  
                      </form>  
                 </div>  
@@ -86,10 +75,6 @@ include 'phpCodigoCarrito.php';
 
 
 
-
-
-
-<input type="button" class="button" value="Input Button">
 
 
 

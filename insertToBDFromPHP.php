@@ -9,8 +9,6 @@
 <legend>Datos</legend>
 
 
-
-
 <form name="frmContact" method="post" action="insertBD.php">
 <p>
 <label for="nombre">Nombre </label>
@@ -28,40 +26,21 @@
 <label for="mail">Email</label>
 <input type="text" name="mail" id="mail">
 </p>
+<p>
 <label for="telefono">Telefono</label>
 <input type="text" name="telefono" id="telefono">
 </p>
+<p>
 <label for="num_tarjeta">Numero de la tarjeta</label>
 <input type="text" name="num_tarjeta" id="num_tarjeta">
 </p>
+<p>
+<label for="total">Importe</label>
+<input type="text" name="total" value="<?php echo $_GET['importe']; ?>" readonly id="total">
+</p>
 
-
-
-
-
-
-
-
-<p>&nbsp;</p>
 
 
 <p>
 <button type="submit" class="btn btn-primary" id="Submit">Finalizar compra</button> 
 </p>
-
-
-
-
-
-
-
-</form>
-
-</fieldset>
-
-
-
-
-
-</body>
-</html>
