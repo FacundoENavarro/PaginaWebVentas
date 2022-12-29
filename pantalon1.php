@@ -1,4 +1,5 @@
 <?php
+// Se incluye el codigo del carrito para tener sus variables y la conexion a la BD
 include 'phpCodigoCarrito.php';
 ?>
 
@@ -51,7 +52,7 @@ include 'phpCodigoCarrito.php';
                                <h4 class="text-danger">$ <?php echo $row["importe"]; ?></h4>
                                <h4 class="text-danger">Cuantos desea añadir?</h4>  
                                <input type="text" name="quantity" class="form-control" value="1" />  
-                               <input type="hidden" name="hidden_name" value="<?php echo $row["sexo"]; ?>" />  
+                               <input type="hidden" name="hidden_name" value="<?php echo $row["nombre_producto"]; ?>" />  
                                <input type="hidden" name="hidden_price" value="<?php echo $row["importe"]; ?>" />  
                                <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Añadir al carro" />  
                           </div>  

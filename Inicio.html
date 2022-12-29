@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Titulo de la pagina -->
 <title>Ventas Maria Rosa</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,8 +13,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 </style>
 </head>
 <body>
-
-<!-- Sidebar (hidden by default) -->
+<!-- Barra lateral para acceder mas rapido a diferentes partes de la pagina-->
 <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()"
   class="w3-bar-item w3-button">Cerrar Menu</a>
@@ -21,7 +21,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">Ventas Por Stock</a>
 </nav>
 
-<!-- Top menu -->
+<!-- Texto de la parte superior de la pagina -->
 <div class="w3-top">
   <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
     <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
@@ -37,6 +37,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 
 <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 
+
+<!-- Los productos con sus respectivos links y variables -->
 
     <div class="w3-quarter">
       <a href="pantalon1.php?valor=1?">
@@ -74,16 +76,14 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
       <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
     </div>
   </div>
-  
-  <hr id="about">
 
-  <!-- About Section -->
+  <!-- Los Stocks con sus respectivos links y variables -->
   <div class="w3-container w3-padding-32 w3-center"> 
 
     <h3>Venta Por Stock</h3>
     <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 
-  <!-- First Photo Grid-->
+
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
     <div class="w3-quarter">
       <a href="pantalon1.php?valor=5">
@@ -114,7 +114,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   </div>
   <hr>
   
-  <!-- Footer -->
+  <!-- Pie de pagina -->
   <footer class="w3-row-padding w3-padding-32">
     <div class="w3-third">
       <h3>Recuerda Volver!</h3>
@@ -149,11 +149,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     </div>
   </footer>
 
-<!-- End page content -->
 </div>
 
 <script>
-// Script to open and close sidebar
+// Script para abrir y cerrar la barra lateral
 function w3_open() {
   document.getElementById("mySidebar").style.display = "block";
 }

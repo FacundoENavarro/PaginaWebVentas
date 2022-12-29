@@ -20,7 +20,7 @@
 </p>
 <p>
 <label for="direccion">Direccion</label>
-<input type="text" name="contraseña" id="contraseña">
+<input type="text" name="direccion" id="direccion">
 </p>
 <p>
 <label for="mail">Email</label>

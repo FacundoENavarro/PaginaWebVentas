@@ -1,4 +1,5 @@
 <?php
+// Se incluye el codigo del carrito para tener sus variables y la conexion a la BD
 include 'phpCodigoCarrito.php';
 ?>
 
@@ -7,13 +8,8 @@ include 'phpCodigoCarrito.php';
 <html>
 
 <body>
-
-
-<style>
-
-</style>
-
-                <h3>Detalles del Pedido</h3>  
+          <!-- Se muestran los datos de los productos seleccionados -->         
+                <h3 >Detalles del Pedido</h3>  
                 <div class="table-responsive">  
                      <table class="table table-bordered">  
                           <tr>  
@@ -23,7 +19,8 @@ include 'phpCodigoCarrito.php';
                                <th width="5%">Total</th>  
                                <th width="5%">Desea removerlo?</th>  
                           </tr>  
-                          <?php   
+                          <?php
+                             
                           if(!empty($_SESSION["shopping_cart"]))  
                           {  
                                $total = 0;  

@@ -1,9 +1,9 @@
 <?php
-	// incluimos la conexión a MySQL
+	// Se incluye la conexión a MySQL
     
 	include_once('bdConnection.php');
 
-	// variables para insertar datos a mysqli
+	// Variables para insertar datos a MySQL
     $total = $_POST['total'];
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];
@@ -12,12 +12,7 @@
     $telefono = $_POST['telefono'];
     $num_tarjeta = $_POST['num_tarjeta'];
 
-
-
-
-
-
-
+    // Query que pasa los datos de php a MySQL
     
     $query = "INSERT INTO venta (total, nombre, apellido, direccion, mail, telefono, num_tarjeta) 
 	VALUES('$total', '$nombre', '$apellido', '$direccion', '$mail', '$telefono', '$num_tarjeta')";

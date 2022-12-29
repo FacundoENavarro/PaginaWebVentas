@@ -1,4 +1,5 @@
- <?php   
+ <?php
+ // Se conecta a la base de datos con nombre "webventa"   
  session_start();  
  $connect = mysqli_connect("localhost", "root", "root", "webventa");  
  if(isset($_POST["add_to_cart"]))  
@@ -19,7 +20,8 @@
            }  
            else  
            {  
-                echo '<script>alert("Item Already Added")</script>';  
+                echo '<script>alert("El articulo seleccionado ya esta en el carrito")</script>';
+                echo '<script>alert("Si desea agregar una cantidad diferente remuevalo primero")</script>';  
                 echo '<script>window.location="carritoFinal.php"</script>';  
            }  
       }  
