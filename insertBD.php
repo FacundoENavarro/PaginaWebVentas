@@ -2,18 +2,8 @@
 	// Se incluye la conexión a MySQL
     
 	include_once('bdConnection.php');
-
-    $host = "localhost"; /* Host name */
-    $user = "root"; /* User */
-    $password = "root"; /* Password */
-    $dbname = "webventa"; /* Database name */
-
-    $con = new mysqli($servername, $username, $password, $database);
-    // Check connection
-    if ($con->connect_error) {
-        die("Conexión fallida: " . $con->connect_error);
-    }
-
+    include_once('pantalon1.php');
+    include_once('phpCodigoCarrito.php');
 
 	// Variables para insertar datos a MySQL
     $total = $_POST['total'];
@@ -25,29 +15,44 @@
     $num_tarjeta = $_POST['num_tarjeta'];
 
     // Query que pasa los datos de php a MySQL
-    
-    // $query = "INSERT INTO clientes (total, nombre, apellido, direccion, mail, telefono, num_tarjeta) 
-	// VALUES('$total', '$nombre', '$apellido', '$direccion', '$mail', '$telefono', '$num_tarjeta')";
 
     $query = "INSERT INTO clientes (nombre, apellido, direccion, mail, telefono, num_tarjeta) 
     VALUES('$nombre', '$apellido', '$direccion', '$mail', '$telefono', '$num_tarjeta')";
 
-    //$ultimaId = mysql_result(mysql_query("SELECT id_cli FROM clientes ORDER BY id_cli DESC LIMIT 1;"),0);
-
     if(mysqli_query($con,$query)){ 
 
-    // Get last insert id 
-    $lastid = mysqli_insert_id($con); 
+    $lastidcli = mysqli_insert_id($con); 
 
-    echo "last id : ".$lastid; 
     }
 
     $query = "INSERT INTO venta (total, id_cli)
-    VALUES ('$total', '$lastid')";
+    VALUES ('$total', '$lastidcli')";
+
+    if(mysqli_query($con,$query)){ 
+
+    $lastidven = mysqli_insert_id($con); 
+
+    }
+
+$order_array = $_SESSION['shopping_cart'];
+
+foreach($order_array as $primero)  
+           {  
+                $idart = $primero['item_id']; 
+                $nombreart = $primero['item_name'];  
+                $precioart = $primero['item_price'];
+                $cantidadart = $primero['item_quantity'];
+
+                $values[] = "('$lastidven', '$idart', '$nombreart', '$precioart','$cantidadart')";  
+           }  
+           $query = "INSERT INTO detalle_venta(id_venta, id_articulo, nombre_art, precio, cantidad) VALUES ";  
+           $query .= implode(', ', $values); 
 
 	if ($con->query($query)) {  
-        header('Location: Inicio.html');;
+        header('Location: Inicio.html');
     }else{
         return false;
     }
+
+
 ?>

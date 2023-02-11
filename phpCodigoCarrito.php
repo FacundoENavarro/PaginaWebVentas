@@ -20,9 +20,17 @@
            }  
            else  
            {  
-                echo '<script>alert("El articulo seleccionado ya esta en el carrito")</script>';
-                echo '<script>alert("Si desea agregar una cantidad diferente remuevalo primero")</script>';  
-                echo '<script>window.location="carritoFinal.php"</script>';  
+               $count = count($_SESSION["shopping_cart"]);  
+                $item_array = array(  
+                     'item_id'               =>     $_GET["id_articulo"],  
+                     'item_name'               =>     $_POST["hidden_name"],  
+                     'item_price'          =>     $_POST["hidden_price"],  
+                     'item_quantity'          =>     $_POST["quantity"]  
+                );  
+                $_SESSION["shopping_cart"][$count] = $item_array;
+                // echo '<script>alert("El articulo seleccionado ya esta en el carrito")</script>';
+                // echo '<script>alert("Si desea agregar una cantidad diferente remuevalo primero")</script>';  
+                // echo '<script>window.location="carritoFinal.php"</script>';
            }  
       }  
       else  

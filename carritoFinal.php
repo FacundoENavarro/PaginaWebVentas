@@ -13,6 +13,7 @@ include 'phpCodigoCarrito.php';
                 <div class="table-responsive">  
                      <table class="table table-bordered">  
                           <tr>  
+                               <th width="5%">Id Art.</th>
                                <th width="5%">Nombre del Articulo</th>  
                                <th width="5%">Cantidad</th>  
                                <th width="5%">Precio</th>  
@@ -27,7 +28,8 @@ include 'phpCodigoCarrito.php';
                                foreach($_SESSION["shopping_cart"] as $keys => $values)  
                                {  
                           ?>  
-                          <tr>  
+                          <tr> 
+                               <td><?php echo $values["item_id"]; ?></td>
                                <td><?php echo $values["item_name"]; ?></td>  
                                <td><?php echo $values["item_quantity"]; ?></td>  
                                <td>$ <?php echo $values["item_price"]; ?></td>  
@@ -58,6 +60,16 @@ include 'phpCodigoCarrito.php';
 
 </p>
 
+<p>
+     <br>
+     <?php 
+
+     echo '<pra>'; print_r($_SESSION['shopping_cart']); echo '</pra>';
+     $order_array = $_SESSION['shopping_cart'];
+     echo '<pre>'; print_r($order_array); echo '</pre>';
+
+     ?>
+</p>
 
 
 <p>
