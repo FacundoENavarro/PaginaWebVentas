@@ -11,14 +11,14 @@ include 'phpCodigoCarrito.php';
           <!-- Se muestran los datos de los productos seleccionados -->         
                 <h3 >Detalles del Pedido</h3>  
                 <div class="table-responsive">  
-                     <table class="table table-bordered">  
+                     <table border="1" id="cssTable">
                           <tr>  
                                <th width="5%">Id Art.</th>
                                <th width="5%">Nombre del Articulo</th>  
                                <th width="5%">Cantidad</th>  
                                <th width="5%">Precio</th>  
-                               <th width="5%">Total</th>  
-                               <th width="5%">Desea removerlo?</th>  
+                               <th width="5%">Articulo-Total</th>  
+                               <th width="5%">Desea eliminarlo?</th>
                           </tr>  
                           <?php
                              
@@ -29,20 +29,21 @@ include 'phpCodigoCarrito.php';
                                {  
                           ?>  
                           <tr> 
-                               <td><?php echo $values["item_id"]; ?></td>
-                               <td><?php echo $values["item_name"]; ?></td>  
-                               <td><?php echo $values["item_quantity"]; ?></td>  
-                               <td>$ <?php echo $values["item_price"]; ?></td>  
-                               <td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>  
-                               <td><a href="carritoFinal.php?action=delete&id_articulo=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>  
+                               <td style="text-align: center; vertical-align: middle;"> <?php echo $values["item_id"]; ?> </td>
+                               <td style="text-align: center; vertical-align: middle;"> <?php echo $values["item_name"]; ?> </td>  
+                               <td style="text-align: center; vertical-align: middle;"> <?php echo $values["item_quantity"]; ?> </td>  
+                               <td style="text-align: center; vertical-align: middle;"> $ <?php echo $values["item_price"]; ?> </td>  
+                               <td style="text-align: center; vertical-align: middle;"> $ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?> </td>  
+                               <td style="text-align: center; vertical-align: middle;"> <a href="carritoFinal.php?action=delete&id_articulo=<?php echo $values["item_id"]; ?>"> <span class="text-danger">Eliminar</span></a></td>
+
                           </tr>  
                           <?php  
                                     $total = $total + ($values["item_quantity"] * $values["item_price"]);  
                                }  
                           ?>  
                           <tr>  
-                               <td colspan="3" align="right">Total</td>  
-                               <td align="right">$ <?php echo number_format($total, 2); ?></td>  
+                               <td colspan="3" style="text-align: center;">Precio Final</td>  
+                               <td style="text-align: center;">$ <?php echo number_format($total, 2); ?></td>  
                                <td></td>  
                           </tr>  
                           <?php  
@@ -51,33 +52,40 @@ include 'phpCodigoCarrito.php';
                      </table>  
                 </div>
 
+<style>
+      div{
+        text-align: center;
+      }
+      .button {
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+     }
 
+     .button1 {background-color: #4CAF50;} /* Green */
+     .button2 {background-color: #DE3163;} /* Cerise */
 
+    </style>
+
+               <div>
 <p>
      <br>
-     <br>
-     <a href="insertToBDFromPHP.php?importe=<?php echo $total; ?>"> <button type="button">Finalizar compra</button>
+     <a href="insertToBDFromPHP.php?importe=<?php echo $total; ?>"> <button class="button button1">Finalizar compra</button>
 
 </p>
 
 <p>
      <br>
-     <?php 
-
-     echo '<pra>'; print_r($_SESSION['shopping_cart']); echo '</pra>';
-     $order_array = $_SESSION['shopping_cart'];
-     echo '<pre>'; print_r($order_array); echo '</pre>';
-
-     ?>
+     <a href="Inicio.html"> <button class="button button2"> Seguir comprando </button>
 </p>
 
-
-<p>
-     <br>
-     <br>
-     <a href="Inicio.html"> <button type="button"> Seguir comprando </button>
-</p>
-
+               </div>
 
 </body>
 </html>

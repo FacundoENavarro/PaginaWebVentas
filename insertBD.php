@@ -43,9 +43,12 @@ foreach($order_array as $primero)
                 $precioart = $primero['item_price'];
                 $cantidadart = $primero['item_quantity'];
 
-                $values[] = "('$lastidven', '$idart', '$nombreart', '$precioart','$cantidadart')";  
+                $precio_resultado = $precioart * $cantidadart;
+
+                $values[] = "('$lastidven', '$idart', '$nombreart', '$precioart','$cantidadart', '$precio_resultado')";
+
            }  
-           $query = "INSERT INTO detalle_venta(id_venta, id_articulo, nombre_art, precio, cantidad) VALUES ";  
+           $query = "INSERT INTO detalle_venta(id_venta, id_articulo, nombre_art, precio, cantidad, precio_resultado) VALUES ";  
            $query .= implode(', ', $values); 
 
 	if ($con->query($query)) {  

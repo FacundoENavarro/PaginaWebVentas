@@ -1,3 +1,6 @@
+<?php
+include 'phpCodigoCarrito.php';
+?>
 <!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -5,9 +8,9 @@
 </head>
 
 <body>
-<fieldset>
-<legend>Datos</legend>
 
+<div style="background-color:#f1f1f1; border-radius:5px; padding:16px; margin: auto; width: 30%; border: 3px solid green; padding: 50px; margin-top: 50px;" align="center">
+<legend>Datos</legend>
 
 <form name="frmContact" method="post" action="insertBD.php">
 <p>
@@ -39,10 +42,12 @@
 <input type="text" name="total" value="<?php echo $_GET['importe']; ?>" readonly id="total">
 </p>
 
+<p> <button type="submit" class="btn btn-primary" id="Submit">Finalizar compra</button> </p>
+
+<p> <a href="carritoFinal.php"> <button type="button">Ver Carrito </button> </a> </p>
+
+<p> <a href="borrarTod.php"> <button type="button"> Cancelar compra </button> </a> </p>
 
 
-<p>
-<button type="submit" class="btn btn-primary" id="Submit">Finalizar compra</button> 
-</p>
-
+</div>
 

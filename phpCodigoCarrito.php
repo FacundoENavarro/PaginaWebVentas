@@ -56,6 +56,11 @@
                      echo '<script>window.location="carritoFinal.php"</script>';  
                 }  
            }  
-      }  
+      }
+      if($_GET["action"] == "deleteAll")
+      {
+                     unset($_SESSION["shopping_cart"]);    
+                     echo '<script>window.location="carritoFinal.php"</script>';  
+      }    
  }  
  ?>

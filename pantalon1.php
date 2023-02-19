@@ -29,10 +29,21 @@ include 'phpCodigoCarrito.php';
   float: right;
 }
 
+.container {
+  width: 700px;
+  display: flex;
+  position: relative;
+
+}
+
+
+.button1 {background-color: #4CAF50;} /* Green */
+.button2 {background-color: #DE3163;} /* Cerise */
+
 </style>
 
 
-           <div class="container" style="width:700px;">  
+           <div>  
 
 
                 <?php
@@ -46,7 +57,7 @@ include 'phpCodigoCarrito.php';
                 ?>  
                 <div class="col-md-4">  
                      <form method="post" action="carritoFinal.php?action=add&id_articulo=<?php echo $row["id_articulo"]; ?>">  
-                          <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">  
+                          <div style="background-color:#f1f1f1; border-radius:5px; padding:16px; margin: auto; width: 30%; border: 3px solid green; padding: 50px; margin-top: 50px;" align="center">  
                                <h4 class="text-info"><?php echo $row["nombre_producto"]; ?></h4>  
                                <img src="images/Productos/<?php echo $row["nombre_producto"];?>.jpg" alt="Sandwich" style="width:50%">
                                <h4 class="text-danger">$ <?php echo $row["importe"]; ?></h4>
@@ -54,7 +65,8 @@ include 'phpCodigoCarrito.php';
                                <input type="text" name="quantity" class="form-control" value="1" />  
                                <input type="hidden" name="hidden_name" value="<?php echo $row["nombre_producto"]; ?>" />  
                                <input type="hidden" name="hidden_price" value="<?php echo $row["importe"]; ?>" />  
-                               <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Añadir al carro" />  
+                               <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Añadir al carro" />
+                               <p> <button type="button" onclick="window.location.href = 'Inicio.html';"> Volver atras </button> </p>
                           </div>  
                      </form>  
                 </div>  
@@ -66,7 +78,7 @@ include 'phpCodigoCarrito.php';
                 <br />  
 
 
-
+     </div>
 
 
 
