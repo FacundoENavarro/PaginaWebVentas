@@ -82,7 +82,7 @@ include 'phpCodigoCarrito.php';
 
 <p>
      <br>
-     <a href="Inicio.html"> <button class="button button2"> Seguir comprando </button>
+     <a href="index.html"> <button class="button button2"> Seguir comprando </button>
 </p>
 
                </div>

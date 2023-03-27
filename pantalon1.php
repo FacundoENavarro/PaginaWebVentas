@@ -66,7 +66,7 @@ include 'phpCodigoCarrito.php';
                                <input type="hidden" name="hidden_name" value="<?php echo $row["nombre_producto"]; ?>" />  
                                <input type="hidden" name="hidden_price" value="<?php echo $row["importe"]; ?>" />  
                                <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Añadir al carro" />
-                               <p> <button type="button" onclick="window.location.href = 'Inicio.html';"> Volver atras </button> </p>
+                               <p> <button type="button" onclick="window.location.href = 'index.html';"> Volver atras </button> </p>
                           </div>  
                      </form>  
                 </div>  

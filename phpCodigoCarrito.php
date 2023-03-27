@@ -1,6 +1,8 @@
  <?php
- // Se conecta a la base de datos con nombre "webventa"   
- session_start();  
+ // Se conecta a la base de datos con nombre "webventa" 
+ if( empty(session_id()) && !headers_sent()){
+    session_start();
+}
  $connect = mysqli_connect("localhost", "root", "root", "webventa");  
  if(isset($_POST["add_to_cart"]))  
  {  
