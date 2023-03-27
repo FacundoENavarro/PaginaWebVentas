@@ -8,7 +8,7 @@ Cree este proyecto para aprender sobre el funcionamiento y la creacion de las pa
 
 Gracias a el aprendi muchisimo, desde cosas basicas como la utilizacion de GitHub, hasta subir la pagina a un servicio de hosting.
 Pase de hacer una pagina en blanco con HTML, a añadirle diseño con CSS (con la ayuda de Bootstrap), hacer la conexion a la Base de Datos con PHP y crear
-tablas relacionales en MySql(Con PHPMyadmin).
+tablas relacionales en MySql (Con PHPMyadmin).
 
 ## Instalacion
 
@@ -22,7 +22,7 @@ tablas relacionales en MySql(Con PHPMyadmin).
 ## Uso y Caracteristicas
 
 * Posibilidad de añadir varios productos a un carrito como elegir la cantidad deseada.
-* Respuesta inmediata al hacer una compra(se envia un mail detallando los productos comprados).
+* Respuesta inmediata al hacer una compra (se envia un mail detallando los productos comprados).
 * Actualizacion de BD de forma instantanea.
 
 ## Link para Testeo
